@@ -1,0 +1,221 @@
+[
+  {
+    "name": "水污染防治措施及檢測申報管理辦法",
+    "file": "水污染防治措施及檢測申報管理辦法.txt",
+    "type": "law_text",
+    "scope": "general",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "水污染防治措施計畫及許可申請審查管理辦法",
+    "file": "水污染防治措施計畫及許可申請審查管理辦法.txt",
+    "type": "law_text",
+    "scope": "general",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "水污染防治法",
+    "file": "水污染防治法.pdf",
+    "type": "law_text",
+    "scope": "general",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "水污染防治法施行細則",
+    "file": "水污染防治法施行細則.pdf",
+    "type": "law_text",
+    "scope": "general",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "違反水污染防治法罰鍰額度裁罰準則",
+    "file": "違反水污染防治法罰鍰額度裁罰準則.pdf",
+    "type": "law_text",
+    "scope": "general",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": true,
+    "structured_items": [
+      "pH",
+      "COD",
+      "SS",
+      "TTO",
+      "2-METHOXY-1-PROPANOL",
+      "DMAC",
+      "COBALT",
+      "ANTIMONY"
+    ],
+    "notes": "已結構化核心 demo 項目"
+  },
+  {
+    "name": "附表七海水淡化廠放流水水質項目及限值",
+    "file": "附表七海水淡化廠放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表三石油化學業放流水水質項目及限值",
+    "file": "附表三石油化學業放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表九科學工業園區專用污水下水道系統放流水水質項目及限值",
+    "file": "附表九科學工業園區專用污水下水道系統放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "sewer_system",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表二光電材料及元件製造業放流水水質項目及限值",
+    "file": "附表二光電材料及元件製造業放流水水質項目及限值.PDF",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表五金屬基本工業、金屬表面處理業、電鍍業和印刷電路板製造業放流水水質項目及限值",
+    "file": "附表五金屬基本工業、金屬表面處理業、電鍍業和印刷電路板製造業放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表八晶圓製造及半導體製造業、光電材料及元件製造業、石油化學業、化工業、金屬基本工業、金屬表面處理業、電鍍業、印刷電路板製造業、發電廠及海水淡化廠以外之事業放流水水質項目及限值",
+    "file": "附表八晶圓製造及半導體製造業、光電材料及元件製造業、石油化學業、化工業、金屬基本工業、金屬表面處理業、電鍍業、印刷電路板製造業、發電廠及海水淡化廠以外之事業放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表六發電廠放流水水質項目及限值",
+    "file": "附表六發電廠放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表十一其他工業區專用污水下水道系統放流水水質項目及限值",
+    "file": "附表十一其他工業區專用污水下水道系統放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "sewer_system",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表十三其他指定地區或場所專用污水下水道系統放流水水質項目及限值",
+    "file": "附表十三其他指定地區或場所專用污水下水道系統放流水水質項目及限值 .pdf",
+    "type": "standard_attachment",
+    "scope": "sewer_system",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表十二社區專用污水下水道系統放流水水質項目及限值",
+    "file": "附表十二社區專用污水下水道系統放流水水質項目及限值 .pdf",
+    "type": "standard_attachment",
+    "scope": "sewer_system",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表十五建築物污水處理設施放流水水質項目及限值",
+    "file": "附表十五建築物污水處理設施放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表十六",
+    "file": "附表十六.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表十四公共污水下水道系統放流水水質項目及限值",
+    "file": "附表十四公共污水下水道系統放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "sewer_system",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表十石油化學專業區專用污水下水道系統放流水水質項目及限值",
+    "file": "附表十石油化學專業區專用污水下水道系統放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "sewer_system",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  },
+  {
+    "name": "附表四化工業放流水水質項目及限值",
+    "file": "附表四化工業放流水水質項目及限值.pdf",
+    "type": "standard_attachment",
+    "scope": "industry",
+    "rag_indexed": true,
+    "structured": false,
+    "structured_items": [],
+    "notes": "全文進 RAG；尚未結構化比對"
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "semiconductor_cwa_table1_ph",
+    "domain": "wastewater",
+    "industry": "晶圓製造及半導體製造業",
+    "pollutant": "pH",
+    "aliases": [
+      "氫離子濃度指數"
+    ],
+    "limit_type": "range",
+    "min_value": 6.0,
+    "max_value": 9.0,
+    "unit": "",
+    "requires_industry": true,
+    "source_name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "source_article": "放流水標準第2條附表一",
+    "source_file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "notes": "由現有附表一 PDF 整理。",
+    "scope_type": "industry",
+    "conditions": []
+  },
+  {
+    "id": "semiconductor_cwa_table1_cod",
+    "domain": "wastewater",
+    "industry": "晶圓製造及半導體製造業",
+    "pollutant": "COD",
+    "aliases": [
+      "化學需氧量"
+    ],
+    "limit_type": "max",
+    "limit_value": 100,
+    "unit": "mg/L",
+    "requires_industry": true,
+    "source_name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "source_article": "放流水標準第2條附表一",
+    "source_file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "notes": "由現有附表一 PDF 整理；新增法規時新增資料列，不新增比較函式。",
+    "scope_type": "industry",
+    "conditions": []
+  },
+  {
+    "id": "semiconductor_cwa_table1_ss",
+    "domain": "wastewater",
+    "industry": "晶圓製造及半導體製造業",
+    "pollutant": "SS",
+    "aliases": [
+      "懸浮固體"
+    ],
+    "limit_type": "max",
+    "limit_value": 30,
+    "unit": "mg/L",
+    "requires_industry": true,
+    "source_name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "source_article": "放流水標準第2條附表一",
+    "source_file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "notes": "由現有附表一 PDF 整理；新增法規時新增資料列，不新增比較函式。",
+    "scope_type": "industry",
+    "conditions": []
+  },
+  {
+    "id": "semiconductor_cwa_table1_tto",
+    "domain": "wastewater",
+    "industry": "晶圓製造及半導體製造業",
+    "pollutant": "TTO",
+    "aliases": [
+      "總毒性有機物"
+    ],
+    "limit_type": "max",
+    "limit_value": 1.37,
+    "unit": "mg/L",
+    "requires_industry": true,
+    "source_name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "source_article": "放流水標準第2條附表一",
+    "source_file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "notes": "由現有附表一 PDF 整理；新增法規時新增資料列，不新增比較函式。",
+    "scope_type": "industry",
+    "conditions": []
+  },
+  {
+    "id": "semiconductor_cwa_table1_2_methoxy_1_propanol",
+    "domain": "wastewater",
+    "industry": "晶圓製造及半導體製造業",
+    "pollutant": "2-METHOXY-1-PROPANOL",
+    "aliases": [
+      "2-甲氧基-1-丙醇"
+    ],
+    "limit_type": "max",
+    "limit_value": 0.1,
+    "unit": "mg/L",
+    "requires_industry": true,
+    "source_name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "source_article": "放流水標準第2條附表一",
+    "source_file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "notes": "由現有附表一 PDF 整理；新增法規時新增資料列，不新增比較函式。",
+    "scope_type": "industry",
+    "conditions": []
+  },
+  {
+    "id": "semiconductor_cwa_table1_dmac",
+    "domain": "wastewater",
+    "industry": "晶圓製造及半導體製造業",
+    "pollutant": "DMAC",
+    "aliases": [
+      "二甲基乙醯胺",
+      "二甲基乙酰胺"
+    ],
+    "limit_type": "max",
+    "limit_value": 0.1,
+    "unit": "mg/L",
+    "requires_industry": true,
+    "source_name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "source_article": "放流水標準第2條附表一",
+    "source_file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "notes": "由現有附表一 PDF 整理；新增法規時新增資料列，不新增比較函式。",
+    "scope_type": "industry",
+    "conditions": []
+  },
+  {
+    "id": "semiconductor_cwa_table1_cobalt",
+    "domain": "wastewater",
+    "industry": "晶圓製造及半導體製造業",
+    "pollutant": "COBALT",
+    "aliases": [
+      "鈷"
+    ],
+    "limit_type": "max",
+    "limit_value": 1.0,
+    "unit": "mg/L",
+    "requires_industry": true,
+    "source_name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "source_article": "放流水標準第2條附表一",
+    "source_file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "notes": "由現有附表一 PDF 整理；新增法規時新增資料列，不新增比較函式。",
+    "scope_type": "industry",
+    "conditions": []
+  },
+  {
+    "id": "semiconductor_cwa_table1_antimony",
+    "domain": "wastewater",
+    "industry": "晶圓製造及半導體製造業",
+    "pollutant": "ANTIMONY",
+    "aliases": [
+      "銻"
+    ],
+    "limit_type": "max",
+    "limit_value": 1.0,
+    "unit": "mg/L",
+    "requires_industry": true,
+    "source_name": "附表一晶圓製造及半導體製造業放流水水質項目及限值",
+    "source_article": "放流水標準第2條附表一",
+    "source_file": "附表一晶圓製造及半導體製造業放流水水質項目及限值.pdf",
+    "notes": "由現有附表一 PDF 整理；新增法規時新增資料列，不新增比較函式。",
+    "scope_type": "industry",
+    "conditions": []
+  }
+]

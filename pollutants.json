@@ -1,0 +1,172 @@
+{
+  "pollutants": [
+    {
+      "canonical": "COD",
+      "aliases": [
+        "COD",
+        "化學需氧量",
+        "化學需氧量(COD)",
+        "化學需氧量（COD）"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "BOD",
+      "aliases": [
+        "BOD",
+        "BOD5",
+        "生化需氧量",
+        "生化需氧量(BOD)",
+        "生化需氧量（BOD）"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "SS",
+      "aliases": [
+        "SS",
+        "懸浮固體",
+        "懸浮固體物"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "pH",
+      "aliases": [
+        "pH",
+        "PH",
+        "氫離子濃度指數"
+      ],
+      "default_unit": "",
+      "allowed_units": [
+        ""
+      ]
+    },
+    {
+      "canonical": "NH3-N",
+      "aliases": [
+        "NH3-N",
+        "氨氮",
+        "氨態氮"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "TTO",
+      "aliases": [
+        "TTO",
+        "總毒性有機物"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "2-METHOXY-1-PROPANOL",
+      "aliases": [
+        "2-甲氧基-1-丙醇",
+        "2-Methoxy-1-propanol"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "DMAC",
+      "aliases": [
+        "DMAC",
+        "二甲基乙醯胺",
+        "二甲基乙酰胺",
+        "Dimethylacetamide"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "COBALT",
+      "aliases": [
+        "鈷",
+        "Cobalt",
+        "Co"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "ANTIMONY",
+      "aliases": [
+        "銻",
+        "Antimony",
+        "Sb"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "canonical": "晶圓製造及半導體製造業",
+      "aliases": [
+        "晶圓",
+        "半導體",
+        "晶圓製造",
+        "半導體製造",
+        "封裝",
+        "測試"
+      ]
+    }
+  ],
+  "retrieval_terms": [
+    "放流水標準",
+    "水質項目",
+    "限值",
+    "標準值"
+  ]
+}
