@@ -1,0 +1,85 @@
+.citation {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-left: 2px solid #bfb8aa;
+  border-radius: 8px;
+  background: #f5f3ee;
+}
+
+.header {
+  margin-bottom: 8px;
+  color: #5f5b53;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.item {
+  padding-top: 8px;
+  border-top: 0.5px solid #dedad2;
+}
+
+.item:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.item + .item {
+  margin-top: 10px;
+}
+
+.titleButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #555149;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.titleButton span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  flex: 0 0 auto;
+  color: #817c73;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.citation p {
+  margin: 8px 0 0;
+  color: #3d3c38;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.copyButton {
+  margin-top: 8px;
+  min-height: 28px;
+  padding: 0 9px;
+  border: 0.5px solid #d0ccc3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #5c5850;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.copyButton:hover {
+  background: #fbfaf7;
+}

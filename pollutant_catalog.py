@@ -72,7 +72,7 @@ def infer_industry_hint(text: str, catalog: Optional[Dict[str, Any]] = None) -> 
     """從使用者文字推斷產業提示。"""
     catalog = catalog if catalog is not None else load_catalog()
     for industry in catalog.get("industries", []):
-        if any(alias in text for alias in industry.get("aliases", [])):
+        if any(alias and alias in text for alias in industry.get("aliases", [])):
             return industry["canonical"]
     return None
 

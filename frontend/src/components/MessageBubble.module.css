@@ -1,0 +1,90 @@
+.row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.userRow {
+  justify-content: flex-end;
+}
+
+.assistantRow {
+  justify-content: flex-start;
+}
+
+.avatar,
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.avatar {
+  margin-top: 2px;
+  border: 0.5px solid #d6d2c9;
+  color: #515049;
+  background: #fbfaf7;
+}
+
+.userAvatar {
+  background: #dbeafd;
+  color: #35679a;
+}
+
+.bubble {
+  max-width: 520px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #2d2d2a;
+}
+
+.bubble p {
+  margin: 0 0 8px;
+}
+
+.bubble p:last-child {
+  margin-bottom: 0;
+}
+
+.userBubble {
+  padding: 12px 16px;
+  border: 0.5px solid #cbc7bd;
+  border-radius: 12px;
+  background: #f7f5ef;
+}
+
+.assistantBubble {
+  padding-top: 2px;
+}
+
+.loading {
+  display: inline-flex;
+  margin-top: 6px;
+  color: #7a766e;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.meta {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 3px 8px;
+  border: 0.5px solid #d8d4cb;
+  border-radius: 8px;
+  background: #fbfaf7;
+  color: #6f6b63;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@media (max-width: 720px) {
+  .bubble {
+    max-width: calc(100vw - 96px);
+  }
+}

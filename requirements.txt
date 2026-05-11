@@ -1,0 +1,6 @@
+chromadb
+fastapi
+langgraph
+ollama
+pymupdf
+uvicorn

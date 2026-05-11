@@ -1,12 +1,22 @@
 {
   "pollutants": [
     {
-      "canonical": "COD",
+      "canonical": "1,2-二氯乙烷",
       "aliases": [
-        "COD",
-        "化學需氧量",
-        "化學需氧量(COD)",
-        "化學需氧量（COD）"
+        "1,2-二氯乙烷"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "1,3-丁二烯",
+      "aliases": [
+        "1,3-丁二烯"
       ],
       "default_unit": "mg/L",
       "allowed_units": [
@@ -34,6 +44,37 @@
       ]
     },
     {
+      "canonical": "COD",
+      "aliases": [
+        "COD",
+        "化學需氧量",
+        "化學需氧量(COD)",
+        "化學需氧量（COD）"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "NH3-N",
+      "aliases": [
+        "氨氮",
+        "氨態氮",
+        "NH3-N"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
       "canonical": "SS",
       "aliases": [
         "SS",
@@ -51,8 +92,8 @@
     {
       "canonical": "pH",
       "aliases": [
-        "pH",
         "PH",
+        "pH",
         "氫離子濃度指數"
       ],
       "default_unit": "",
@@ -61,11 +102,9 @@
       ]
     },
     {
-      "canonical": "NH3-N",
+      "canonical": "三氯乙烯",
       "aliases": [
-        "NH3-N",
-        "氨氮",
-        "氨態氮"
+        "三氯乙烯"
       ],
       "default_unit": "mg/L",
       "allowed_units": [
@@ -76,10 +115,9 @@
       ]
     },
     {
-      "canonical": "TTO",
+      "canonical": "三氯甲烷",
       "aliases": [
-        "TTO",
-        "總毒性有機物"
+        "三氯甲烷"
       ],
       "default_unit": "mg/L",
       "allowed_units": [
@@ -90,10 +128,9 @@
       ]
     },
     {
-      "canonical": "2-METHOXY-1-PROPANOL",
+      "canonical": "丙烯腈",
       "aliases": [
-        "2-甲氧基-1-丙醇",
-        "2-Methoxy-1-propanol"
+        "丙烯腈"
       ],
       "default_unit": "mg/L",
       "allowed_units": [
@@ -104,12 +141,9 @@
       ]
     },
     {
-      "canonical": "DMAC",
+      "canonical": "乙苯",
       "aliases": [
-        "DMAC",
-        "二甲基乙醯胺",
-        "二甲基乙酰胺",
-        "Dimethylacetamide"
+        "乙苯"
       ],
       "default_unit": "mg/L",
       "allowed_units": [
@@ -120,11 +154,9 @@
       ]
     },
     {
-      "canonical": "COBALT",
+      "canonical": "二氯甲烷",
       "aliases": [
-        "鈷",
-        "Cobalt",
-        "Co"
+        "二氯甲烷"
       ],
       "default_unit": "mg/L",
       "allowed_units": [
@@ -135,11 +167,949 @@
       ]
     },
     {
-      "canonical": "ANTIMONY",
+      "canonical": "五氯硝苯",
       "aliases": [
-        "銻",
-        "Antimony",
-        "Sb"
+        "五氯硝苯"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "五氯酚及其鹽類",
+      "aliases": [
+        "五氯酚及其鹽類"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "使用廢紙為原料未達百分之六十者",
+      "aliases": [
+        "使用廢紙為原料未達百分之六十者",
+        "使用廢紙 為原料未 達百分之 六十者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "使用廢紙為原料達百分之六十以上者",
+      "aliases": [
+        "使用廢紙為原料達百分之六十以上者",
+        "使用廢紙 為原料達 百分之六 十以上者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "六價鉻",
+      "aliases": [
+        "六價鉻"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "具動物屍體化製製程",
+      "aliases": [
+        "具動物屍體化製製程",
+        "具動物屍 體化製製 程"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "印花、梭織布染整者",
+      "aliases": [
+        "印花、梭織布染整者",
+        "印花、梭 織布染整 者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "四氯丹",
+      "aliases": [
+        "四氯丹"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "多氯聯苯",
+      "aliases": [
+        "多氯聯苯"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "大腸桿菌群",
+      "aliases": [
+        "大腸桿菌群"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "安殺番",
+      "aliases": [
+        "安殺番"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "安特靈",
+      "aliases": [
+        "安特靈"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "戴奧辛",
+      "aliases": [
+        "戴奧辛"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "整理、紙印花、刷毛、剪毛、磨毛及非屬前二類者",
+      "aliases": [
+        "整理、紙印花、刷毛、剪毛、磨毛及非屬前二類者",
+        "整理、紙 印花、刷 毛 、 剪 毛、磨毛 及非屬前 二類者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "旅館、民宿",
+      "aliases": [
+        "旅館、民宿",
+        "旅館 （ 飯 店）、 民宿"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "未使用廢紙為原料者",
+      "aliases": [
+        "未使用廢紙為原料者",
+        "未使用廢 紙為原料 者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "正磷酸鹽",
+      "aliases": [
+        "正磷酸鹽",
+        "正磷酸鹽（以三 價磷酸根計算）",
+        "正磷酸鹽（以三價 磷酸根計算）",
+        "正磷酸鹽（以三價磷 酸根計算）",
+        "正磷酸鹽 （以三價磷酸 根計算）",
+        "正 磷 酸 鹽 （以三價磷 酸根計算）"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "毒殺芬",
+      "aliases": [
+        "毒殺芬"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "氟鹽",
+      "aliases": [
+        "氟鹽"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "氯乙烯",
+      "aliases": [
+        "氯乙烯"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "氰化物",
+      "aliases": [
+        "氰化物"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "油脂",
+      "aliases": [
+        "油脂",
+        "油脂（正己烷抽出物）"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "流量二五0立方公尺／日以下",
+      "aliases": [
+        "流量二五0立方公尺／日以下",
+        "流量二五0 立方公尺 ／日以下"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "溶解性錳",
+      "aliases": [
+        "溶解性錳"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "溶解性鐵",
+      "aliases": [
+        "溶解性鐵"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "滴滴涕及其衍生物",
+      "aliases": [
+        "滴滴涕及其衍生物"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "濕藍皮製成成品皮者",
+      "aliases": [
+        "濕藍皮製成成品皮者",
+        "濕藍皮製 成成品皮 者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "生皮製成成品皮者",
+      "aliases": [
+        "生皮製成成品皮者",
+        "生皮製成 成品皮者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "甲基汞",
+      "aliases": [
+        "甲基汞"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "甲醛",
+      "aliases": [
+        "甲醛"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "真色色度",
+      "aliases": [
+        "真色色度"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "砷",
+      "aliases": [
+        "砷"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "硒",
+      "aliases": [
+        "硒"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "硝基苯",
+      "aliases": [
+        "硝基苯"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "硝酸鹽氮",
+      "aliases": [
+        "硝酸鹽氮"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "硫化物",
+      "aliases": [
+        "硫化物"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "硼",
+      "aliases": [
+        "硼"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "福爾培",
+      "aliases": [
+        "福爾培"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "筒紗、絞紗染色、針織布及不織布染整者",
+      "aliases": [
+        "筒紗、絞紗染色、針織布及不織布染整者",
+        "筒紗、絞 紗染色、 針織布及 不織布染 整者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "總有機磷劑",
+      "aliases": [
+        "總有機磷劑"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "總氨基甲酸鹽",
+      "aliases": [
+        "總氨基甲酸鹽"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "總氮",
+      "aliases": [
+        "總氮"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "總汞",
+      "aliases": [
+        "總汞"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "總磷",
+      "aliases": [
+        "總磷"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "總鉻",
+      "aliases": [
+        "總鉻"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "總餘氯",
+      "aliases": [
+        "總餘氯",
+        "總餘氯（或氯生成氧化物）"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "自由有效餘氯",
+      "aliases": [
+        "自由有效餘氯"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "苯",
+      "aliases": [
+        "苯"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "草食性動物，如牛、馬、羊、鹿、兔等",
+      "aliases": [
+        "草食性動物，如牛、馬、羊、鹿、兔等",
+        "草食性動 物，如 牛、馬、 羊、鹿、 兔等"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "蓋普丹",
+      "aliases": [
+        "蓋普丹"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鄰苯二甲酸丁基苯甲酯",
+      "aliases": [
+        "鄰苯二甲酸丁基苯甲酯",
+        "鄰苯二甲酸丁基 苯甲酯(BBP)",
+        "鄰苯二甲酸丁基苯甲酯 (BBP)"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鄰苯二甲酸二丁酯",
+      "aliases": [
+        "鄰苯二甲酸二丁酯",
+        "鄰苯二甲酸二丁 酯(DBP)",
+        "鄰苯二甲酸二丁酯 (DBP)"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鄰苯二甲酸二乙酯",
+      "aliases": [
+        "鄰苯二甲酸二乙酯",
+        "鄰苯二甲酸二乙 酯(DEP)",
+        "鄰苯二甲酸二乙酯 (DEP)"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鄰苯二甲酸二甲酯",
+      "aliases": [
+        "鄰苯二甲酸二甲酯",
+        "鄰苯二甲酸二甲酯（DMP）",
+        "鄰苯二甲酸二甲 酯(DMP)"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鄰苯二甲酸二辛酯",
+      "aliases": [
+        "鄰苯二甲酸二辛酯",
+        "鄰苯二甲酸二辛酯 (DNOP)"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鄰苯二甲酸二酯",
+      "aliases": [
+        "鄰苯二甲酸二酯",
+        "鄰苯二甲酸二(2-乙基己基)酯(DEHP)"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "酚類",
+      "aliases": [
+        "酚類"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鉛",
+      "aliases": [
+        "鉛"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鉬",
+      "aliases": [
+        "鉬"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "銀",
+      "aliases": [
+        "銀"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "銅",
+      "aliases": [
+        "銅"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鋅",
+      "aliases": [
+        "鋅"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "錫",
+      "aliases": [
+        "錫"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鎘",
+      "aliases": [
+        "鎘"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "鎳",
+      "aliases": [
+        "鎳"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "阿特靈、地特靈",
+      "aliases": [
+        "阿特靈、地特靈"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "除草劑",
+      "aliases": [
+        "除草劑"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "陰離子界面活性劑",
+      "aliases": [
+        "陰離子界面活性劑"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "靈丹",
+      "aliases": [
+        "靈丹"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "非屬「生皮製成成品皮」、「濕藍皮製成成品皮」二類者",
+      "aliases": [
+        "非屬「生皮製成成品皮」、「濕藍皮製成成品皮」二類者",
+        "非屬「生 皮製成成 品皮」、 「濕藍皮 製成成品 皮」二類 者"
+      ],
+      "default_unit": "mg/L",
+      "allowed_units": [
+        "mg/L",
+        "毫克/公升",
+        "毫克／公升",
+        "mg/l"
+      ]
+    },
+    {
+      "canonical": "飛佈達及其衍生物",
+      "aliases": [
+        "飛佈達及其衍生物"
       ],
       "default_unit": "mg/L",
       "allowed_units": [
@@ -152,14 +1122,175 @@
   ],
   "industries": [
     {
+      "canonical": "化工業",
+      "aliases": [
+        "化工業",
+        "附表四化工業放流水水質項目及限值",
+        "化工"
+      ]
+    },
+    {
+      "canonical": "發電廠",
+      "aliases": [
+        "發電廠",
+        "附表六發電廠放流水水質項目及限值"
+      ]
+    },
+    {
+      "canonical": "附表十六",
+      "aliases": [
+        "附表十六"
+      ]
+    },
+    {
+      "canonical": "海水淡化廠",
+      "aliases": [
+        "海水淡化廠",
+        "附表七海水淡化廠放流水水質項目及限值"
+      ]
+    },
+    {
+      "canonical": "石油化學業",
+      "aliases": [
+        "石油化學業",
+        "附表三石油化學業放流水水質項目及限值",
+        "石油化學"
+      ]
+    },
+    {
+      "canonical": "公共污水下水道系統",
+      "aliases": [
+        "公共污水下水道系統",
+        "附表十四公共污水下水道系統放流水水質項目及限值",
+        "公共",
+        "公共污水下水道"
+      ]
+    },
+    {
+      "canonical": "建築物污水處理設施",
+      "aliases": [
+        "建築物污水處理設施",
+        "附表十五建築物污水處理設施放流水水質項目及限值",
+        "建築物污水"
+      ]
+    },
+    {
+      "canonical": "光電材料及元件製造業",
+      "aliases": [
+        "光電材料及元件製造業",
+        "附表二光電材料及元件製造業放流水水質項目及限值",
+        "光電材料",
+        "元件製造業",
+        "元件",
+        "元件製造"
+      ]
+    },
+    {
       "canonical": "晶圓製造及半導體製造業",
       "aliases": [
-        "晶圓",
-        "半導體",
+        "晶圓製造及半導體製造業",
+        "附表一晶圓製造及半導體製造業放流水水質項目及限值",
         "晶圓製造",
+        "半導體製造業",
+        "半導體",
+        "半導體製造"
+      ]
+    },
+    {
+      "canonical": "社區專用污水下水道系統",
+      "aliases": [
+        "社區專用污水下水道系統",
+        "附表十二社區專用污水下水道系統放流水水質項目及限值",
+        "社區",
+        "社區專用",
+        "社區專用污水下水道"
+      ]
+    },
+    {
+      "canonical": "其他工業區專用污水下水道系統",
+      "aliases": [
+        "其他工業區專用污水下水道系統",
+        "附表十一其他工業區專用污水下水道系統放流水水質項目及限值",
+        "其他工業區",
+        "其他工業區專用",
+        "其他工業區專用污水下水道"
+      ]
+    },
+    {
+      "canonical": "科學工業園區專用污水下水道系統",
+      "aliases": [
+        "科學工業園區專用污水下水道系統",
+        "附表九科學工業園區專用污水下水道系統放流水水質項目及限值",
+        "科學工業園區",
+        "科學工業園區專用",
+        "科學工業園區專用污水下水道"
+      ]
+    },
+    {
+      "canonical": "石油化學專業區專用污水下水道系統",
+      "aliases": [
+        "石油化學專業區專用污水下水道系統",
+        "附表十石油化學專業區專用污水下水道系統放流水水質項目及限值",
+        "石油化學專業區",
+        "石油化學專業區專用",
+        "石油化學專業區專用污水下水道"
+      ]
+    },
+    {
+      "canonical": "其他指定地區或場所專用污水下水道系統",
+      "aliases": [
+        "其他指定地區或場所專用污水下水道系統",
+        "附表十三其他指定地區或場所專用污水下水道系統放流水水質項目及限值",
+        "其他指定地區或場所",
+        "其他指定地區或場所專用",
+        "其他指定地區或場所專用污水下水道"
+      ]
+    },
+    {
+      "canonical": "金屬基本工業、金屬表面處理業、電鍍業和印刷電路板製造業",
+      "aliases": [
+        "金屬基本工業、金屬表面處理業、電鍍業和印刷電路板製造業",
+        "附表五金屬基本工業、金屬表面處理業、電鍍業和印刷電路板製造業放流水水質項目及限值",
+        "金屬基本工業",
+        "金屬基本工",
+        "金屬表面處理業",
+        "金屬表面處理",
+        "電鍍業",
+        "電鍍",
+        "印刷電路板製造業",
+        "印刷電路板",
+        "印刷電路板製造"
+      ]
+    },
+    {
+      "canonical": "晶圓製造及半導體製造業、光電材料及元件製造業、石油化學業、化工業、金屬基本工業、金屬表面處理業、電鍍業、印刷電路板製造業、發電廠及海水淡化廠以外之事業",
+      "aliases": [
+        "晶圓製造及半導體製造業、光電材料及元件製造業、石油化學業、化工業、金屬基本工業、金屬表面處理業、電鍍業、印刷電路板製造業、發電廠及海水淡化廠以外之事業",
+        "附表八晶圓製造及半導體製造業、光電材料及元件製造業、石油化學業、化工業、金屬基本工業、金屬表面處理業、電鍍業、印刷電路板製造業、發電廠及海水淡化廠以外之事業放流水水質項目及限值",
+        "晶圓製造",
+        "半導體製造業",
+        "半導體",
         "半導體製造",
-        "封裝",
-        "測試"
+        "光電材料",
+        "元件製造業",
+        "元件",
+        "元件製造",
+        "石油化學業",
+        "石油化學",
+        "化工業",
+        "化工",
+        "金屬基本工業",
+        "金屬基本工",
+        "金屬表面處理業",
+        "金屬表面處理",
+        "電鍍業",
+        "電鍍",
+        "印刷電路板製造業",
+        "印刷電路板",
+        "印刷電路板製造",
+        "發電廠",
+        "海水淡化廠以外之事業",
+        "海水淡化廠以外之事"
       ]
     }
   ],

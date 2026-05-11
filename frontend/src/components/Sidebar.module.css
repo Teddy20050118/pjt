@@ -1,0 +1,197 @@
+.sidebar {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: 124px minmax(0, 1fr) 72px;
+  background: #f5f4ef;
+  border-right: 0.5px solid #d4d1c9;
+}
+
+.header {
+  padding: 22px 18px 12px;
+  border-bottom: 0.5px solid #d4d1c9;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #252522;
+}
+
+.subtitle {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #77736a;
+}
+
+.searchInput {
+  width: 100%;
+  height: 34px;
+  margin-top: 14px;
+  border: 0.5px solid #d0ccc3;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #2e2d2a;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 10px;
+  outline: 0;
+}
+
+.searchInput::placeholder {
+  color: #8a867d;
+}
+
+.list {
+  min-height: 0;
+  overflow: auto;
+  padding: 12px 0;
+}
+
+.empty {
+  padding: 16px 18px;
+  color: #77736a;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px;
+  align-items: center;
+  color: #2e2e2b;
+}
+
+.item:hover,
+.active {
+  background: #ffffff;
+}
+
+.itemMain {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+  border: 0;
+  background: transparent;
+  padding: 12px 4px 12px 18px;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.itemTitle {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pin {
+  display: inline-flex;
+  margin-right: 6px;
+  color: #6c6961;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.item small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #77736a;
+}
+
+.menuButton {
+  width: 26px;
+  height: 26px;
+  margin-right: 6px;
+  display: grid;
+  place-items: center;
+  border: 0.5px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #706c63;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.item:hover .menuButton,
+.active .menuButton,
+.menuButton[aria-expanded="true"] {
+  opacity: 1;
+}
+
+.menuButton:hover,
+.menuButton[aria-expanded="true"] {
+  border-color: #d5d1c8;
+  background: #fbfaf7;
+}
+
+.menu {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  z-index: 4;
+  width: 128px;
+  padding: 6px;
+  border: 0.5px solid #d1cdc4;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.menu button {
+  width: 100%;
+  height: 32px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #2e2d2a;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background: #f5f4ef;
+}
+
+.menu .danger {
+  color: #9b2f28;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px 14px;
+  border-top: 0.5px solid #d4d1c9;
+}
+
+.newButton {
+  width: 100%;
+  height: 42px;
+  border: 0.5px solid #bbb7ad;
+  border-radius: 8px;
+  background: #fbfaf7;
+  color: #2e2d2a;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.newButton span {
+  margin-right: 8px;
+}
+
+@media (max-width: 720px) {
+  .sidebar {
+    display: none;
+  }
+}
