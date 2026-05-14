@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import Any, Callable
 from uuid import uuid4
@@ -31,6 +32,11 @@ SUMMARY_KEYWORDS = (
     "這類",
     "類別",
 )
+
+BARE_ARTICLE_PATTERN = re.compile(r"^\s*第\s*([0-9一二三四五六七八九十百]+)\s*條\s*$")
+ARTICLE_PATTERN = re.compile(r"第\s*([0-9一二三四五六七八九十百]+)\s*條")
+BARE_TABLE_PATTERN = re.compile(r"^\s*附表\s*([0-9一二三四五六七八九十百]+)\s*$")
+TABLE_PATTERN = re.compile(r"附表\s*([0-9一二三四五六七八九十百]+)")
 
 FOLLOWUP_KEYWORDS = (
     "那",
@@ -599,19 +605,180 @@ def retrieve_category_citations(query: str, category: str) -> list[dict[str, Any
 
 
 def dedupe_citations(citations: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    seen = set()
-    output = []
-    for citation in citations:
-        key = (
-            citation.get("title"),
-            citation.get("source_file"),
-            citation.get("text"),
-        )
-        if key in seen:
+    groups: dict[tuple[str, str, str], dict[str, Any]] = {}
+    order: list[tuple[str, str, str]] = []
+
+    for raw_citation in citations:
+        citation = normalize_citation(raw_citation)
+        canonical = canonicalize_citation(citation)
+        key = canonical["key"]
+        existing = groups.get(key)
+
+        if existing is None:
+            groups[key] = citation
+            order.append(key)
             continue
-        seen.add(key)
-        output.append(citation)
-    return output
+
+        existing_meta = canonicalize_citation(existing)
+        if canonical["specificity_score"] > existing_meta["specificity_score"]:
+            citation = merge_citation_fields(primary=citation, secondary=existing)
+            groups[key] = citation
+        else:
+            groups[key] = merge_citation_fields(primary=existing, secondary=citation)
+
+    groups = absorb_bare_references(groups)
+    return [groups[key] for key in order if key in groups]
+
+
+def absorb_bare_references(
+    groups: dict[tuple[str, str, str], dict[str, Any]]
+) -> dict[tuple[str, str, str], dict[str, Any]]:
+    bare_keys = [
+        key for key, citation in groups.items()
+        if (
+            canonicalize_citation(citation)["kind"] == "article"
+            and is_bare_article_title(citation.get("title", ""))
+        )
+        or (
+            canonicalize_citation(citation)["kind"] == "table"
+            and is_bare_table_title(citation.get("title", ""))
+        )
+    ]
+
+    for bare_key in bare_keys:
+        bare = groups.get(bare_key)
+        if not bare:
+            continue
+        bare_meta = canonicalize_citation(bare)
+        matches = [
+            key for key, candidate in groups.items()
+            if key != bare_key
+            and canonicalize_citation(candidate)["kind"] == bare_meta["kind"]
+            and canonicalize_citation(candidate).get("article_no") == bare_meta.get("article_no")
+            and canonicalize_citation(candidate).get("table_no") == bare_meta.get("table_no")
+            and canonicalize_citation(candidate)["specificity_score"] > bare_meta["specificity_score"]
+        ]
+        if len(matches) == 1:
+            groups[matches[0]] = merge_citation_fields(primary=groups[matches[0]], secondary=bare)
+            groups.pop(bare_key, None)
+        elif len(matches) > 1:
+            groups.pop(bare_key, None)
+
+    return groups
+
+
+def canonicalize_citation(citation: dict[str, Any]) -> dict[str, Any]:
+    normalized = normalize_citation(citation)
+    title = normalized.get("title", "")
+    law_name = normalized.get("law_name", "")
+    article_no = extract_article_number(title) or extract_article_number(normalized.get("article", ""))
+    table_no = extract_table_number(title) or extract_table_number(normalized.get("source_file", ""))
+
+    if article_no:
+        has_law_name = bool(law_name) or not is_bare_article_title(title)
+        key_law = law_name if law_name else ("__unknown_law__" if is_bare_article_title(title) else title_without_article(title))
+        specificity = 30 if has_law_name else 10
+        return {
+            "kind": "article",
+            "law_name": law_name,
+            "article_no": article_no,
+            "table_no": "",
+            "display_title": title,
+            "specificity_score": specificity,
+            "key": ("article", key_law, article_no),
+        }
+
+    if table_no:
+        is_bare = is_bare_table_title(title)
+        specificity = 30 if not is_bare else 10
+        return {
+            "kind": "table",
+            "law_name": law_name,
+            "article_no": "",
+            "table_no": table_no,
+            "display_title": title,
+            "specificity_score": specificity,
+            "key": ("table", "", table_no),
+        }
+
+    if law_name or title:
+        display = title or law_name
+        return {
+            "kind": "law",
+            "law_name": law_name or display,
+            "article_no": "",
+            "table_no": "",
+            "display_title": display,
+            "specificity_score": 20,
+            "key": ("law", law_name or display, ""),
+        }
+
+    return {
+        "kind": "unknown",
+        "law_name": "",
+        "article_no": "",
+        "table_no": "",
+        "display_title": "",
+        "specificity_score": 0,
+        "key": ("unknown", str(citation), ""),
+    }
+
+
+def normalize_citation(citation: dict[str, Any]) -> dict[str, Any]:
+    normalized = dict(citation)
+    title = normalize_title(str(normalized.get("title", "")))
+    law_name = normalize_title(str(normalized.get("law_name", "")))
+    article = normalize_title(str(normalized.get("article", "")))
+
+    if is_bare_article_title(title) and law_name:
+        title = " ".join(part for part in [law_name, title] if part)
+    elif not title and law_name:
+        title = " ".join(part for part in [law_name, article] if part)
+
+    normalized["title"] = title
+    if law_name:
+        normalized["law_name"] = law_name
+    if article:
+        normalized["article"] = article
+    return normalized
+
+
+def merge_citation_fields(primary: dict[str, Any], secondary: dict[str, Any]) -> dict[str, Any]:
+    merged = dict(primary)
+    for field in ("text", "source_file", "law_name", "article", "score", "type"):
+        if not merged.get(field) and secondary.get(field):
+            merged[field] = secondary[field]
+    return merged
+
+
+def normalize_title(title: str) -> str:
+    return re.sub(r"\s+", " ", title).strip()
+
+
+def is_bare_article_title(title: str) -> bool:
+    return bool(BARE_ARTICLE_PATTERN.match(normalize_title(title)))
+
+
+def is_bare_table_title(title: str) -> bool:
+    return bool(BARE_TABLE_PATTERN.match(normalize_title(title)))
+
+
+def extract_article_number(title: str) -> str | None:
+    match = ARTICLE_PATTERN.search(normalize_title(title))
+    if not match:
+        return None
+    return match.group(1)
+
+
+def extract_table_number(title: str) -> str | None:
+    match = TABLE_PATTERN.search(normalize_title(title))
+    if not match:
+        return None
+    return match.group(1)
+
+
+def title_without_article(title: str) -> str:
+    return ARTICLE_PATTERN.sub("", normalize_title(title)).strip()
 
 
 def remember(

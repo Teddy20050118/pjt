@@ -5,6 +5,8 @@ from standards import evaluate_records
 from law_query_categories import build_category_query, normalize_category
 from backend_service import (
     build_structured_judgment,
+    canonicalize_citation,
+    dedupe_citations,
     memory_store,
     process_query,
 )
@@ -229,6 +231,70 @@ class BackendServiceTests(unittest.TestCase):
         )
         self.assertNotEqual(called, [])
         self.assertIsNotNone(payload["structured_judgment"])
+
+    def test_dedupe_citations_drops_bare_article_when_full_title_exists(self):
+        citations = dedupe_citations([
+            {"title": "\u7b2c 35 \u689d", "text": ""},
+            {
+                "title": "\u6c34\u6c61\u67d3\u9632\u6cbb\u63aa\u65bd\u8a08\u756b\u53ca\u8a31\u53ef\u7533\u8acb\u5be9\u67e5\u7ba1\u7406\u8fa6\u6cd5 \u7b2c 35 \u689d",
+                "text": "",
+            },
+        ])
+        self.assertEqual(len(citations), 1)
+        self.assertIn("\u6c34\u6c61\u67d3\u9632\u6cbb\u63aa\u65bd", citations[0]["title"])
+
+    def test_dedupe_citations_keeps_same_article_from_different_laws(self):
+        citations = dedupe_citations([
+            {"title": "\u6c34\u6c61\u67d3\u9632\u6cbb\u6cd5 \u7b2c 35 \u689d", "text": ""},
+            {
+                "title": "\u6c34\u6c61\u67d3\u9632\u6cbb\u63aa\u65bd\u8a08\u756b\u53ca\u8a31\u53ef\u7533\u8acb\u5be9\u67e5\u7ba1\u7406\u8fa6\u6cd5 \u7b2c 35 \u689d",
+                "text": "",
+            },
+        ])
+        self.assertEqual(len(citations), 2)
+
+    def test_dedupe_citations_drops_ambiguous_bare_article(self):
+        citations = dedupe_citations([
+            {"title": "\u7b2c 35 \u689d", "text": "\u88f8\u689d\u6587"},
+            {"title": "\u6c34\u6c61\u67d3\u9632\u6cbb\u6cd5 \u7b2c 35 \u689d", "text": ""},
+            {
+                "title": "\u6c34\u6c61\u67d3\u9632\u6cbb\u63aa\u65bd\u8a08\u756b\u53ca\u8a31\u53ef\u7533\u8acb\u5be9\u67e5\u7ba1\u7406\u8fa6\u6cd5 \u7b2c 35 \u689d",
+                "text": "",
+            },
+        ])
+        self.assertEqual(len(citations), 2)
+        self.assertNotIn("\u7b2c 35 \u689d", [item["title"] for item in citations])
+
+    def test_canonicalize_citation_parses_article_and_table(self):
+        article = canonicalize_citation({"title": "\u7b2c 35 \u689d"})
+        table = canonicalize_citation({"title": "\u9644\u8868\u516d"})
+        full_table = canonicalize_citation({
+            "title": "\u9644\u8868\u516d\u767c\u96fb\u5ee0\u653e\u6d41\u6c34\u6c34\u8cea\u9805\u76ee\u53ca\u9650\u503c"
+        })
+        self.assertEqual(article["kind"], "article")
+        self.assertEqual(article["article_no"], "35")
+        self.assertEqual(table["kind"], "table")
+        self.assertEqual(table["table_no"], "\u516d")
+        self.assertGreater(full_table["specificity_score"], table["specificity_score"])
+
+    def test_dedupe_citations_drops_bare_table_when_full_title_exists(self):
+        citations = dedupe_citations([
+            {"title": "\u9644\u8868\u516d", "text": "\u88dc\u5145\u6587\u5b57"},
+            {
+                "title": "\u9644\u8868\u516d\u767c\u96fb\u5ee0\u653e\u6d41\u6c34\u6c34\u8cea\u9805\u76ee\u53ca\u9650\u503c",
+                "text": "",
+            },
+        ])
+        self.assertEqual(len(citations), 1)
+        self.assertIn("\u767c\u96fb\u5ee0", citations[0]["title"])
+        self.assertEqual(citations[0]["text"], "\u88dc\u5145\u6587\u5b57")
+
+    def test_dedupe_citations_keeps_different_tables(self):
+        citations = dedupe_citations([
+            {"title": "\u9644\u8868\u516d", "text": ""},
+            {"title": "\u9644\u8868\u5341\u516d", "text": ""},
+        ])
+        self.assertEqual(len(citations), 2)
 
 
 if __name__ == "__main__":
