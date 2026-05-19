@@ -678,6 +678,90 @@ class BackendServiceTests(unittest.TestCase):
                 self.assertIn("放流水標準第2條", titles)
                 self.assertNotIn("水污染防治措施及檢測申報管理辦法", titles)
 
+    def test_self_generated_water_regression_cases(self):
+        cases = [
+            {
+                "question": "印刷電路板製造業的銅、鉛、鎳、總鉻、六價鉻限值是多少？",
+                "route": "limit_query",
+                "expected": ["銅", "3 mg/L", "鎳", "1 mg/L", "總鉻", "2 mg/L", "六價鉻", "0.5 mg/L", "查無", "鉛", "附表五"],
+                "expected_citations": ["附表五"],
+                "forbidden_citations": ["附表八"],
+            },
+            {
+                "question": "發電廠放流水氨氮 70 mg/L 是否超標？",
+                "route": "numeric_compliance",
+                "expected": ["需要補充適用條件", "NH3-N", "附表六"],
+                "expected_citations": ["附表六"],
+            },
+            {
+                "question": "海水淡化廠懸浮固體 60 mg/L 是否合規？",
+                "route": "numeric_compliance",
+                "expected": ["不符合", "SS", "60", "50", "附表七"],
+                "expected_citations": ["附表七"],
+            },
+            {
+                "question": "一般食品工廠 COD 180 mg/L 是否符合放流水標準？",
+                "route": "numeric_compliance",
+                "expected": ["不符合", "COD", "180", "100", "附表八"],
+                "expected_citations": ["附表八"],
+            },
+            {
+                "question": "科學園區專用污水下水道 COD 90 mg/L 是否符合標準？",
+                "route": "numeric_compliance",
+                "expected": ["需要補充適用條件", "COD", "附表九"],
+                "expected_citations": ["附表九"],
+            },
+            {
+                "question": "其他工業區專用污水下水道系統 pH 限值是多少？",
+                "route": "limit_query",
+                "expected": ["pH", "6.0 至 9.0", "無單位", "附表十一"],
+                "expected_citations": ["附表十一"],
+            },
+            {
+                "question": "公共污水下水道系統氨氮標準是多少？",
+                "route": "limit_query",
+                "expected": ["公共污水下水道系統", "NH3-N", "附表十四"],
+                "expected_citations": ["附表十四"],
+            },
+            {
+                "question": "建築物污水處理設施大腸桿菌群標準是多少？",
+                "route": "limit_query",
+                "expected": ["建築物污水處理設施", "大腸桿菌群", "附表十五"],
+                "expected_citations": ["附表十五"],
+            },
+            {
+                "question": "半導體封測廠排入科學園區污水下水道，pH 標準看哪個？",
+                "route": "sewer_vs_industry_query",
+                "expected": ["科學工業園區專用污水下水道系統", "附表九", "不能"],
+                "expected_citations": ["附表九"],
+            },
+            {
+                "question": "食品工廠排入工業區污水下水道，COD 標準看哪個附表？",
+                "route": "sewer_vs_industry_query",
+                "expected": ["其他工業區專用污水下水道系統", "附表十一", "納管"],
+                "expected_citations": ["附表十一"],
+            },
+        ]
+        for index, case in enumerate(cases):
+            with self.subTest(case=case["question"]):
+                called = []
+                payload = process_query(
+                    query=case["question"],
+                    conversation_id=f"self-generated-water-{index}",
+                    category="auto",
+                    run_graph=lambda query: called.append(query) or {"final_answer": "wrong", "law_search_results": [], "cited_articles": []},
+                )
+                if case["route"] != "numeric_compliance":
+                    self.assertEqual(called, [])
+                self.assertEqual(payload["state"].get("route"), case["route"])
+                for keyword in case["expected"]:
+                    self.assertIn(keyword, payload["final_answer"])
+                titles = "\n".join(item["title"] for item in payload["citations"])
+                for keyword in case["expected_citations"]:
+                    self.assertIn(keyword, titles)
+                for keyword in case.get("forbidden_citations", []):
+                    self.assertNotIn(keyword, titles)
+
     def test_water_obligation_queries_do_not_fall_back_to_empty_rag(self):
         cases = [
             {

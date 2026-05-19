@@ -113,6 +113,12 @@ def retrieval_terms(catalog: Optional[Dict[str, Any]] = None) -> List[str]:
 def infer_industry_hint(text: str, catalog: Optional[Dict[str, Any]] = None) -> Optional[str]:
     """從使用者文字推斷產業提示。"""
     catalog = catalog if catalog is not None else load_catalog()
+    if "科學園區" in text and "下水道" in text:
+        return "科學工業園區專用污水下水道系統"
+    if "工業區" in text and "下水道" in text:
+        return "其他工業區專用污水下水道系統"
+    if ("食品工廠" in text or "一般食品" in text or "一般製造業" in text) and "下水道" not in text:
+        return "晶圓製造及半導體製造業、光電材料及元件製造業、石油化學業、化工業、金屬基本工業、金屬表面處理業、電鍍業、印刷電路板製造業、發電廠及海水淡化廠以外之事業"
     for industry in catalog.get("industries", []):
         if any(alias and alias in text for alias in industry.get("aliases", [])):
             return industry["canonical"]
