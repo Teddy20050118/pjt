@@ -37,7 +37,7 @@
 }
 
 .bubble {
-  max-width: 520px;
+  max-width: 760px;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.65;
@@ -61,6 +61,42 @@
 
 .assistantBubble {
   padding-top: 2px;
+}
+
+.tableWrap {
+  width: min(100%, 720px);
+  margin: 10px 0 14px;
+  overflow-x: auto;
+}
+
+.answerTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.answerTable th,
+.answerTable td {
+  padding: 13px 0;
+  border-bottom: 1px solid #ececec;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.answerTable th {
+  border-bottom-color: #d8d8d8;
+  font-weight: 700;
+}
+
+.answerTable td {
+  font-weight: 400;
+}
+
+.answerTable tr:last-child td {
+  border-bottom: 0;
 }
 
 .loading {

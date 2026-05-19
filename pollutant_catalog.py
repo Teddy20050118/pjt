@@ -62,6 +62,48 @@ def aliases_for_pollutant(name: str, catalog: Optional[Dict[str, Any]] = None) -
     return [name]
 
 
+def detect_pollutant(text: str, catalog: Optional[Dict[str, Any]] = None) -> Optional[str]:
+    """Detect a pollutant name or alias without requiring a measured value."""
+    if not text:
+        return None
+
+    catalog = catalog if catalog is not None else load_catalog()
+    for entry in _alias_entries(catalog):
+        alias = entry["alias"]
+        if re.search(_alias_regex(alias), text, flags=re.IGNORECASE):
+            return entry["canonical"]
+    return None
+
+
+def detect_pollutants(text: str, catalog: Optional[Dict[str, Any]] = None) -> List[str]:
+    """Detect all pollutant names or aliases in text, preserving question order."""
+    if not text:
+        return []
+
+    catalog = catalog if catalog is not None else load_catalog()
+    matches = []
+    seen_spans = []
+    for entry in _alias_entries(catalog):
+        alias = entry["alias"]
+        for match in re.finditer(_alias_regex(alias), text, flags=re.IGNORECASE):
+            span = match.span()
+            if any(span[0] >= existing[0] and span[1] <= existing[1] for existing in seen_spans):
+                continue
+            seen_spans.append(span)
+            matches.append((span[0], span[1], entry["canonical"]))
+
+    result = []
+    seen_pollutants = set()
+    for _, _, pollutant in sorted(matches, key=lambda item: (item[0], -(item[1] - item[0]))):
+        canonical = canonical_pollutant(pollutant)
+        key = canonical.upper()
+        if key in seen_pollutants:
+            continue
+        seen_pollutants.add(key)
+        result.append(canonical)
+    return result
+
+
 def retrieval_terms(catalog: Optional[Dict[str, Any]] = None) -> List[str]:
     """取得 RAG 查詢強化用的通用詞。"""
     catalog = catalog if catalog is not None else load_catalog()
@@ -137,6 +179,10 @@ def _parse_value_after_alias(text: str, start: int, entry: Dict[str, Any]) -> Op
     )
     if not match:
         return None
+    value_start = start + match.start(1)
+    value_end = start + match.end(1)
+    if _number_is_embedded_token(text, value_start, value_end):
+        return None
     return _build_record(entry, match.group(1), match.group(2))
 
 
@@ -152,7 +198,19 @@ def _parse_value_before_alias(text: str, alias_start: int, entry: Dict[str, Any]
     if not matches:
         return None
     match = matches[-1]
+    window_start = max(0, alias_start - 32)
+    value_start = window_start + match.start(1)
+    value_end = window_start + match.end(1)
+    if _number_is_embedded_token(text, value_start, value_end):
+        return None
     return _build_record(entry, match.group(1), match.group(2))
+
+
+def _number_is_embedded_token(text: str, start: int, end: int) -> bool:
+    before = text[start - 1] if start > 0 else ""
+    after = text[end] if end < len(text) else ""
+    token_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-"
+    return (bool(before) and before in token_chars) or (bool(after) and after in token_chars)
 
 
 def _build_record(entry: Dict[str, Any], value: str, unit: str) -> Optional[dict]:
